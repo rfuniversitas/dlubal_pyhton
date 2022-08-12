@@ -1101,7 +1101,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
 
 
 
-### Member.Truss(no, start_node_no, end_node_no, rotation_specification_type=MemberRotationSpecificationType.COORDINATE_SYSTEM_ROTATION_VIA_ANGLE, rotation_parameters, section_no, line, comment, params, model)
+### Member.Truss(no, start_node_no, end_node_no, rotation_specification_type, rotation_parameters, section_no, line, comment, params, model)
 
 * **Parameters**
 
