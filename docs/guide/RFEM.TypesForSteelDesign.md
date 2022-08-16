@@ -12,13 +12,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
     * **no** (*int*) – Boundary Conditions Tag
 
 
-    * **user_defined_name** (*list*) – User Defined Boundary Conditions Name
-
-        > * for user_defined_name[0] == False:  
-                pass
-        
-        > * for user_defined_name == True:  
-                user_defined_name[1] = Defined Name
+    * **user_defined_name** (*str*) – User Defined Boundary Conditions Name
 
 
     * **members** (*str*) – Assigned Members
@@ -130,13 +124,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
     * **geometric_section_axes** (*bool*) – Geometric Section Axes Option
 
 
-    * **user_defined_name** (*list*) – User Defined Effective Length Name
-
-        > * for user_defined_name[0] == False:  
-                pass
-        
-        > * for user_defined_name == True:  
-                user_defined_name[1] = Defined Name
+    * **user_defined_name** (*str*) – User Defined Effective Length Name
 
 
     * **nodal_supports** (*list of lists*) – Nodal Supports Table Definition
@@ -215,14 +203,27 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
     * **components** (*list of lists*) – Components Table Definition
 
         > components[i][0] (enum): Steel Member Local Section Reduction Type Enumeration    
-        components[i][1] (float): Position Value    
-        components[i][2] (bool): Enable/Disable Multiple Option     
-        components[i][3] (enum): Fastener Definition Type Enumeration   
-        components[i][4] (float): Reduction Area    
-            >> * if components[i][2] == True      
-                components[i][5] (int): Multiple Number     
-                components[i][6] (enum): Multiple Offset Definition Type Enumeration    
-                components[i][7] (float): Multiple Offset Value     
+
+        > components[i][1] (float): Position Value  
+
+        > components[i][2] (bool): Enable/Disable Multiple Option 
+
+        > components[i][3] (enum): Fastener Definition Type Enumeration   
+                >> * for components[i][3] == FastenerDefinitionType.DEFINITION_TYPE_ABSOLUTE:     
+                components[i][4] (float): Reduction Area        
+                >> * for components[i][3] == FastenerDefinitionType.DEFINITION_TYPE_RELATIVE:      
+                components[i][4] (float): Reduction Area Factor (value must be between 0.0 and 1.0)
+
+        > if components[i][2] == True   
+        components[i][5] (int): Multiple Number         
+        components[i][6] (enum): Multiple Offset Definition Type Enumeration    
+                >> * for MultipleOffsetDefinitionType.OFFSET_DEFINITION_TYPE_ABSOLUTE:          
+                components[i][7] (float): Multiple Offset Value         
+                >> * for MultipleOffsetDefinitionType.OFFSET_DEFINITION_TYPE_RELATIVE:              
+                components[i][7] (float): Multiple Offset Value (value must be between 0.0 and 1.0)  
+
+
+    * **user_defined_name** (*str*) – User Defined Local Section Reduction Name
 
 
     * **comment** (*str*, *optional*) – Comment

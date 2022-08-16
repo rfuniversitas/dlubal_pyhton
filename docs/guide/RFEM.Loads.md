@@ -394,7 +394,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
         > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:    
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
@@ -406,7 +406,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_distribution == LOAD_DISTRIBUTION_VARYING:     
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – List Reference Bool
@@ -496,7 +496,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
         > * for load_parameter == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:   
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_parameter == LOAD_DISTRIBUTION_TRAPEZOIDAL:    
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
@@ -508,7 +508,7 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_parameter == LOAD_DISTRIBUTION_VARYING:    
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – List Reference Bool
@@ -811,7 +811,7 @@ Load distribution is Uniform by default.
         load_parameter = [epsilon1, epsilon2, epsilon3]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -868,7 +868,7 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:     
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:  
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
@@ -880,7 +880,7 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -940,7 +940,7 @@ Load distribution is Uniform by default.
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
         > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:    
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
@@ -952,10 +952,10 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_distribution == LOAD_DISTRIBUTION_VARYING:     
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_distribution == LOAD_DISTRIBUTION_VARYING_IN_Z:      
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **force_eccentricity** (*bool*) – Enable/Disable Force Eccentricity Option
@@ -1081,7 +1081,7 @@ Load distribution is Uniform by default.
         load_parameter = [relative_distance_a = False, relative_distance_b = False, magnitude_1, magnitude_2, distance_a, distance_b]
 
         > * for load_distribution == LOAD_DISTRIBUTION_CONCENTRATED_VARYING:    
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_distribution == LOAD_DISTRIBUTION_TRAPEZOIDAL:     
         load_parameter = [relative_distance_a = False, relative_distance_b = False,magnitude_1, magnitude_2, distance_a, distance_b]
@@ -1093,7 +1093,7 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_distribution == LOAD_DISTRIBUTION_VARYING:     
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -1234,7 +1234,7 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -1336,7 +1336,7 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, distance_a_is_defined_as_relative = False, distance_b_is_defined_as_relative = False, distance_a, distance_b]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_CONCENTRATED_VARYING:     
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_TRAPEZIODAL:  
         load_parameter = [magnitude_1, magnitude_2, distance_a_relative = False, distance_a_relative = False, a_distance, b_distance]
@@ -1348,7 +1348,7 @@ Load distribution is Uniform by default.
         load_parameter = [magnitude_1, magnitude_2, magnitude_3]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
@@ -1405,7 +1405,7 @@ Load distribution is Uniform by default.
         load_parameter = [tb1, tb2, tb3, tt1, tt2, tt3]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – List Reference Boolean
@@ -1462,7 +1462,7 @@ Load distribution is Uniform by default.
         load_parameter = [delta_t_1, delta_t_2, delta_t_3, t_c_1, t_c_2, t_c_3]
 
         > * for load_distribution == MemberLoadDistribution.LOAD_DISTRIBUTION_VARYING:  
-        load_parameter = [[distance, delta_distance, magnitude], …]
+        load_parameter = [[distance, magnitude], …]
 
 
     * **list_reference** (*bool*) – Enable/Disable List Reference Option
