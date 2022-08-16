@@ -7,14 +7,14 @@ module.exports = {
         logo: '/images/dev_docs.png',
         nav: [
             { text: 'Home', link: '/'},
-            { text: 'User Guide', 
+            { text: 'User Guide',
               items: [
-                {text: 'Quick Start', link: '/guide/'},
+                {text: 'Quick Start', link: '/guide/README.md'},
                 {text: 'Python', link: '/guide/ready'},
                 {text: '.NET', link: '/guide/netintro'},
-                {text: 'JavaScript', link: '/guide/javaintro'},
+                {text: 'JavaScript', link: '/guide/MD/AnalysisSettings'},
                 {text: 'Tutorials', link: '/guide/tutorialintro'},
-              ] 
+              ]
             },
             { text: 'About', link: 'https://www.dlubal.com/en'},
             { text: 'Github', link: 'https://github.com/Dlubal-Software/RFEM_Python_Client'}
@@ -39,7 +39,7 @@ module.exports = {
               {
                 title: "JavaScript Commands",
                 collapsable: false,
-                children: ["javaintro"]
+                children: ["MD/AnalysisSettings", "MD/BasicObjects", "MD/Dimensions", "MD/GlobalParameters", "MD/GuideObjects", "MD/Loading", "MD/Loads", "MD/LoadWizards", "MD/SpecialObjects", "MD/Supports", "MD/Tools", "MD/TypesForLines", "MD/TypesForMembers", "MD/TypesForNodes", "MD/TypesForSolids", "MD/TypesForSurfaces"]
               },
               {
                 title: "Tutorials",
