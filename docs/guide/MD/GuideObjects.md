@@ -1,31 +1,9 @@
 # Guide Objects
 
-## Classes
-
-<dl>
-<dt><a href="#CoordinateSystem">CoordinateSystem</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#createBaseCoordinateSystem">createBaseCoordinateSystem(no, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Create coordinate system (private)</p>
-</dd>
-</dl>
-
 <a name="CoordinateSystem"></a>
 
 ## CoordinateSystem
 **Kind**: global class
-
-* [CoordinateSystem](#CoordinateSystem)
-    * [new CoordinateSystem(no, comment, params)](#new_CoordinateSystem_new)
-    * [.Offset(no, original_point, comment, params)](#CoordinateSystem+Offset) ⇒
-    * [.ThreePoints(no, original_point, u_axis_point_coordinate, uw_plane_point_coordinate, comment, params)](#CoordinateSystem+ThreePoints) ⇒
-    * [.TwoPointsAndAngle(no, original_point, uw_plane_point_coordinate, uw_plane_angle, comment, params)](#CoordinateSystem+TwoPointsAndAngle) ⇒
-    * [.PointAndThreeAngels(no, original_point, rotation_angle_1, rotation_angle_2, rotation_angle_3, rotation_angles_sequence, comment, params)](#CoordinateSystem+PointAndThreeAngels) ⇒
 
 <a name="new_CoordinateSystem_new"></a>
 
@@ -109,16 +87,3 @@ Create  coordinate system with "Points and Three Angles" type
 | params | <code>Object</code> | Additional parameters, can be undefined |
 
 <a name="createBaseCoordinateSystem"></a>
-
-## createBaseCoordinateSystem(no, comment, params) ⇒ <code>Object</code>
-Create coordinate system (private)
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created coordinate system
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of coordinate system, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Additional coordinate system parameters, can be undefined |
-

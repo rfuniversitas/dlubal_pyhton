@@ -1,34 +1,5 @@
 # Analysis Settings
 
-## Modules
-
-<dl>
-<dt><a href="#module_AnalysisSettings">AnalysisSettings</a></dt>
-<dd><p>AnalysisSettings namespace</p>
-</dd>
-</dl>
-
-## Classes
-
-<dl>
-<dt><a href="#SpectralAnalysisSettings">SpectralAnalysisSettings</a></dt>
-<dd><p>Class for setting up the spectral analysis settings.</p>
-</dd>
-<dt><a href="#StabilityAnalysisSettings">StabilityAnalysisSettings</a></dt>
-<dd><p>StabilityAnalysisSettings is a class that represents a stability analysis settings.</p>
-</dd>
-<dt><a href="#StaticAnalysisSettings">StaticAnalysisSettings</a></dt>
-<dd></dd>
-<dt><a href="#WindSimulationSettings">WindSimulationSettings</a></dt>
-<dd><p>Class creates WindSimulationSettings object</p>
-</dd>
-</dl>
-
-<a name="module_AnalysisSettings"></a>
-
-## AnalysisSettings
-AnalysisSettings namespace
-
 <a name="SpectralAnalysisSettings"></a>
 
 ## SpectralAnalysisSettings
@@ -36,12 +7,6 @@ Class for setting up the spectral analysis settings.
 
 **Kind**: global class
 **@returns**: Object SpectralAnalysisSettings
-
-* [SpectralAnalysisSettings](#SpectralAnalysisSettings)
-    * [new SpectralAnalysisSettings(no, name, combinationRulePeriodic, combinationRuleDirectional, scaledSumDirectionalComponentValue, useEquivalentLinearCombination, signedResultsUsingDominantMode, saveResultsOfAllSelectedModes, comment, params)](#new_SpectralAnalysisSettings_new)
-    * [.SetDampingRuleForCQC(dampingRule, dampingConstantForEachMode)](#SpectralAnalysisSettings+SetDampingRuleForCQC)
-    * [.IncludeMissingMasses(ruleForMasses, zeroPeriodicAccelerationType, userDefinedValue)](#SpectralAnalysisSettings+IncludeMissingMasses)
-    * [.GetNo()](#SpectralAnalysisSettings+GetNo) ⇒
 
 <a name="new_SpectralAnalysisSettings_new"></a>
 
@@ -115,12 +80,6 @@ Constructor creates a new object of type StabilityAnalysisSettings
 
 ## StaticAnalysisSettings
 **Kind**: global class
-
-* [StaticAnalysisSettings](#StaticAnalysisSettings)
-    * [new StaticAnalysisSettings(no, analysisType, equationSolver, nonlinearMethod, comment, params)](#new_StaticAnalysisSettings_new)
-    * [.GeometricallyLinear(no, name, equationSolver, plateBendingTheory, activeMass, modifyLoading, comment, params)](#StaticAnalysisSettings+GeometricallyLinear) ⇒
-    * [.SecondOrder(no, name, equationSolver, nonlinearMethod, maxNumberOfIterations, numberOfLoadIncrements, plateBendingTheory, activeMass, modifyLoading, comment, params)](#StaticAnalysisSettings+SecondOrder) ⇒
-    * [.LargeDeformations(no, name, equationSolver, nonlinearMethod, maxNumberOfIterations, numberOfLoadIncrements, percentageOfIterations, plateBendingTheory, activeMass, modifyLoading, comment, params)](#StaticAnalysisSettings+LargeDeformations) ⇒
 
 <a name="new_StaticAnalysisSettings_new"></a>
 

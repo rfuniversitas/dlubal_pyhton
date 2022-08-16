@@ -9,7 +9,7 @@ module.exports = {
             { text: 'Home', link: '/'},
             { text: 'User Guide',
               items: [
-                {text: 'Quick Start', link: '/guide/README.md'},
+                {text: 'Quick Start', link: '/guide/'},
                 {text: 'Python', link: '/guide/ready'},
                 {text: '.NET', link: '/guide/netintro'},
                 {text: 'JavaScript', link: '/guide/MD/AnalysisSettings'},
@@ -39,7 +39,7 @@ module.exports = {
               {
                 title: "JavaScript Commands",
                 collapsable: false,
-                children: ["MD/AnalysisSettings", "MD/BasicObjects", "MD/Dimensions", "MD/GlobalParameters", "MD/GuideObjects", "MD/Loading", "MD/Loads", "MD/LoadWizards", "MD/SpecialObjects", "MD/Supports", "MD/Tools", "MD/TypesForLines", "MD/TypesForMembers", "MD/TypesForNodes", "MD/TypesForSolids", "MD/TypesForSurfaces"]
+                children: ["MD/AnalysisSettings", "MD/BasicObjects", "MD/GuideObjects", "MD/Loading", "MD/Loads", "MD/LoadWizards", "MD/SpecialObjects", "MD/TypesForLines", "MD/TypesForMembers", "MD/TypesForNodes", "MD/TypesForSolids", "MD/TypesForSurfaces"]
               },
               {
                 title: "Tutorials",

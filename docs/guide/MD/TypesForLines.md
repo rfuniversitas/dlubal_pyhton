@@ -1,45 +1,9 @@
 # Types For Lines
 
-## Classes
-
-<dl>
-<dt><a href="#LineHinge">LineHinge</a></dt>
-<dd></dd>
-<dt><a href="#LineMeshRefinement">LineMeshRefinement</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#createLineHinge">createLineHinge(no, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates line hinge</p>
-</dd>
-<dt><a href="#CreateHingeConstant">CreateHingeConstant(hinge)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates line hinge constant</p>
-</dd>
-<dt><a href="#CreateHinge">CreateHinge(hinge)</a> ⇒</dt>
-<dd><p>Creates Hinge</p>
-</dd>
-<dt><a href="#createLineMeshRefinement">createLineMeshRefinement(no, targetFELength, numberOfLayers, lines, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates line mesh refinement</p>
-</dd>
-</dl>
-
 <a name="LineHinge"></a>
 
 ## LineHinge
 **Kind**: global class
-
-* [LineHinge](#LineHinge)
-    * [new LineHinge(no, surface, lines, comment, params)](#new_LineHinge_new)
-    * [.Translation(ux, uy, uz)](#LineHinge+Translation) ⇒ <code>Object</code>
-    * [.TranslationX(ux)](#LineHinge+TranslationX) ⇒ <code>Object</code>
-    * [.TranslationY(uy)](#LineHinge+TranslationY) ⇒ <code>Object</code>
-    * [.TranslationZ(uz)](#LineHinge+TranslationZ) ⇒ <code>Object</code>
-    * [.Rotation(rx)](#LineHinge+Rotation) ⇒ <code>Object</code>
-    * [.AssignTo(surface, lines)](#LineHinge+AssignTo)
-    * [.WallSlabConnection(surface, or)](#LineHinge+WallSlabConnection)
 
 <a name="new_LineHinge_new"></a>
 
@@ -147,13 +111,6 @@ Assign wall-slab connection to line hinge
 ## LineMeshRefinement
 **Kind**: global class
 
-* [LineMeshRefinement](#LineMeshRefinement)
-    * [new LineMeshRefinement(no, targetFELength, numberOfLayers, lines, comment, params)](#new_LineMeshRefinement_new)
-    * [.TargetFELength(targetFELength, numberOfLayers, lines)](#LineMeshRefinement+TargetFELength) ⇒ <code>Object</code>
-    * [.NumberFiniteElements(numberOfFiniteElements, numberOfLayers, lines)](#LineMeshRefinement+NumberFiniteElements) ⇒ <code>Object</code>
-    * [.Gradual(gradual_rows, numberOfLayers, lines)](#LineMeshRefinement+Gradual) ⇒ <code>Object</code>
-    * [.SetLines(gradual_rows, lines)](#LineMeshRefinement+SetLines) ⇒ <code>Object</code>
-
 <a name="new_LineMeshRefinement_new"></a>
 
 ### new LineMeshRefinement(no, targetFELength, numberOfLayers, lines, comment, params)
@@ -226,57 +183,3 @@ Function for assign lines to line mesh refinement
 | lines | <code>Number</code> \| <code>Array</code> | Lines assigned to this refinement, can be undefined |
 
 <a name="createLineHinge"></a>
-
-## createLineHinge(no, comment, params) ⇒ <code>Object</code>
-Creates line hinge
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created line hinge
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of line hinge, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | line hinge parameters, can be undefined |
-
-<a name="CreateHingeConstant"></a>
-
-## CreateHingeConstant(hinge) ⇒ <code>Object</code>
-Creates line hinge constant
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created hinge constant
-
-| Param | Type | Description |
-| --- | --- | --- |
-| hinge | <code>Boolean</code> \| <code>Float</code> | hinge input (true, false, number(stiffness)) |
-
-<a name="CreateHinge"></a>
-
-## CreateHinge(hinge) ⇒
-Creates Hinge
-
-**Kind**: global function
-**Returns**: Hinge object
-
-| Param | Type |
-| --- | --- |
-| hinge | <code>Object</code> |
-
-<a name="createLineMeshRefinement"></a>
-
-## createLineMeshRefinement(no, targetFELength, numberOfLayers, lines, comment, params) ⇒ <code>Object</code>
-Creates line mesh refinement
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created line mesh refinement
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of line mesh refinement, can be undefined |
-| targetFELength | <code>Number</code> | Length of FEA element side on the line, can be undefined |
-| numberOfLayers | <code>Number</code> | Number of layers to be affected by this refinement, can be undefined |
-| lines | <code>Number</code> \| <code>Array</code> | Lines assigned to this refinement, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | line mesh refinement parameters, can be undefined |
-

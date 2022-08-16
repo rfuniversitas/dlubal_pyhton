@@ -1,38 +1,9 @@
 # Types For Solids
 
-## Classes
-
-<dl>
-<dt><a href="#ContactSolid">ContactSolid</a></dt>
-<dd></dd>
-<dt><a href="#GasSolid">GasSolid</a></dt>
-<dd></dd>
-<dt><a href="#SolidMeshRefinement">SolidMeshRefinement</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#createContactSolid">createContactSolid(no, comment, params)</a> ⇒</dt>
-<dd><p>Creates contact solid (private)</p>
-</dd>
-<dt><a href="#createGasSolid">createGasSolid(no, comment, params)</a> ⇒</dt>
-<dd><p>Creates gas solid (private)</p>
-</dd>
-<dt><a href="#createSolidMeshRefinement">createSolidMeshRefinement(no, solid_list, comment, params)</a> ⇒</dt>
-<dd><p>Creates solid mesh refinement (private)</p>
-</dd>
-</dl>
-
 <a name="ContactSolid"></a>
 
 ## ContactSolid
 **Kind**: global class
-
-* [ContactSolid](#ContactSolid)
-    * [new ContactSolid(no, perpendicular_to_surface, parallel_to_surface, values, comment, params)](#new_ContactSolid_new)
-    * [.AssignTo(solid_list)](#ContactSolid+AssignTo)
 
 <a name="new_ContactSolid_new"></a>
 
@@ -66,10 +37,6 @@ Assigns solids to contact solid
 ## GasSolid
 **Kind**: global class
 
-* [GasSolid](#GasSolid)
-    * [new GasSolid(no, pressure, temperature, comment, params)](#new_GasSolid_new)
-    * [.AssignTo(solid_list)](#GasSolid+AssignTo)
-
 <a name="new_GasSolid_new"></a>
 
 ### new GasSolid(no, pressure, temperature, comment, params)
@@ -101,10 +68,6 @@ Assigns solids to gas solid
 ## SolidMeshRefinement
 **Kind**: global class
 
-* [SolidMeshRefinement](#SolidMeshRefinement)
-    * [new SolidMeshRefinement(no, solid_list, comment, params)](#new_SolidMeshRefinement_new)
-    * [.TargetLength(no, solid_list, target_length, comment, params)](#SolidMeshRefinement+TargetLength)
-
 <a name="new_SolidMeshRefinement_new"></a>
 
 ### new SolidMeshRefinement(no, solid_list, comment, params)
@@ -135,45 +98,3 @@ Creates solid mesh refinement
 | params | <code>Object</code> | Solid mesh refinement's parameters, can be undefined |
 
 <a name="createContactSolid"></a>
-
-## createContactSolid(no, comment, params) ⇒
-Creates contact solid (private)
-
-**Kind**: global function
-**Returns**: Created contact solid
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of contact solid |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Contact solid's parameters, can be undefined |
-
-<a name="createGasSolid"></a>
-
-## createGasSolid(no, comment, params) ⇒
-Creates gas solid (private)
-
-**Kind**: global function
-**Returns**: Created gas solid
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of gas solid |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Gas solid's parameters, can be undefined |
-
-<a name="createSolidMeshRefinement"></a>
-
-## createSolidMeshRefinement(no, solid_list, comment, params) ⇒
-Creates solid mesh refinement (private)
-
-**Kind**: global function
-**Returns**: Created solid mesh refinement
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of solid mesh refinement, can be undefined |
-| solid_list | <code>Array</code> | List of solid indexes |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Solid mesh refinement's parameters, can be undefined |
-

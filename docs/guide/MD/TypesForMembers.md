@@ -1,75 +1,9 @@
 # Types For Members
 
-## Classes
-
-<dl>
-<dt><a href="#MemberDefinableStiffness">MemberDefinableStiffness</a></dt>
-<dd></dd>
-<dt><a href="#MemberEccentricity">MemberEccentricity</a></dt>
-<dd></dd>
-<dt><a href="#MemberHinge">MemberHinge</a></dt>
-<dd></dd>
-<dt><a href="#MemberNonlinearity">MemberNonlinearity</a></dt>
-<dd></dd>
-<dt><a href="#MemberResultIntermediatePoint">MemberResultIntermediatePoint</a></dt>
-<dd></dd>
-<dt><a href="#MemberStiffnessModification">MemberStiffnessModification</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#setTransverseOffset">setTransverseOffset(memberEccentricity, reference_type, reference, reference_node_index, alignment_type)</a></dt>
-<dd><p>Sets transverse offset (private)</p>
-</dd>
-<dt><a href="#createMemberEccentricity">createMemberEccentricity(no, members_start_list, members_end_list, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates member eccentricity</p>
-</dd>
-<dt><a href="#setRelativeValues">setRelativeValues(member_eccentricity, alignment_type)</a></dt>
-<dd><p>Sets member eccentricity for relative to section type (private)</p>
-</dd>
-<dt><a href="#getAlignmentParts">getAlignmentParts(alignment)</a> ⇒ <code>Array</code></dt>
-<dd><p>Creates horizontal and vertical strings of alignment (private)</p>
-</dd>
-<dt><a href="#setAbsoluteValues">setAbsoluteValues(memberEccentricity, offset_x, offset_y, offset_z, coordinate_system)</a></dt>
-<dd><p>Sets member eccentricity for absolute type (private)</p>
-</dd>
-<dt><a href="#setPartialActivityZoneValues">setPartialActivityZoneValues(member_hinge, zone_values, param_type_name, param_slippage_name, param_displacement_name, param_force_name)</a></dt>
-<dd><p>Sets values for partial activity zone (private)</p>
-</dd>
-<dt><a href="#setMainHingeValues">setMainHingeValues(member_hinge, values, property_1, property_2)</a> ⇒</dt>
-<dd><p>Sets values to member hinge (private)</p>
-</dd>
-<dt><a href="#createMemberHinge">createMemberHinge(no, members_start_list, members_end_list, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates member hinge (private)</p>
-</dd>
-<dt><a href="#setParameters">setParameters(member_nonlinearity, parameters, param_1_name, param_2_name)</a></dt>
-<dd><p>Sets parameters to member nonlinearity (private)</p>
-</dd>
-<dt><a href="#createNonlinearity">createNonlinearity(no, member_list, comment, params)</a> ⇒ <code>Object</code></dt>
-<dd><p>Creates member nonlinearity</p>
-</dd>
-<dt><a href="#DistancesAreAbsolute">DistancesAreAbsolute(memberResultIntermediatePoint, absolute)</a></dt>
-<dd><p>Sets division ordinates as absolute (private)</p>
-</dd>
-<dt><a href="#setConcreteStructuresComponentType">setConcreteStructuresComponentType(member_stiffness_modification, component_type)</a></dt>
-<dd><p>Sets concrete structures parameters (private)</p>
-</dd>
-</dl>
-
 <a name="MemberDefinableStiffness"></a>
 
 ## MemberDefinableStiffness
 **Kind**: global class
-
-* [MemberDefinableStiffness](#MemberDefinableStiffness)
-    * [new MemberDefinableStiffness(no, member_list, comment, params)](#new_MemberDefinableStiffness_new)
-    * [.TorsionalAndBendingStiffness(torsional_stiffness, bending_stiffness_y, bending_stiffness_z)](#MemberDefinableStiffness+TorsionalAndBendingStiffness)
-    * [.AxialAndShearStiffness(axial_stiffness, shear_stiffness_y, shear_stiffness_z)](#MemberDefinableStiffness+AxialAndShearStiffness)
-    * [.SelfWeightAndSectionArea(specific_weight, section_area)](#MemberDefinableStiffness+SelfWeightAndSectionArea)
-    * [.MainAxesRotation(rotation)](#MemberDefinableStiffness+MainAxesRotation)
-    * [.ThermalExpansionCoefficient(thermal_expansion, width, height)](#MemberDefinableStiffness+ThermalExpansionCoefficient)
 
 <a name="new_MemberDefinableStiffness_new"></a>
 
@@ -151,17 +85,6 @@ Sets coefficient of thermal expansion stiffness parameters
 
 ## MemberEccentricity
 **Kind**: global class
-
-* [MemberEccentricity](#MemberEccentricity)
-    * [new MemberEccentricity(no, members_start_list, members_end_list, comment, params)](#new_MemberEccentricity_new)
-    * [.RelativeToSection(no, members_start_list, members_end_list, alignment, comment, params)](#MemberEccentricity+RelativeToSection) ⇒ <code>Object</code>
-    * [.Absolute(no, members_start_list, members_end_list, offset_x, offset_y, offset_z, coordinate_system, comment, params)](#MemberEccentricity+Absolute) ⇒ <code>Object</code>
-    * [.RelativeAndAbsolute(no, members_start_list, members_end_list, offset_x, offset_y, offset_z, coordinate_system, alignment, comment, params)](#MemberEccentricity+RelativeAndAbsolute) ⇒ <code>Object</code>
-    * [.AxialOffset(active)](#MemberEccentricity+AxialOffset)
-    * [.HingeLocationAtNode(active)](#MemberEccentricity+HingeLocationAtNode)
-    * [.TransverseOffsetMember(reference_member, reference_node, alignment)](#MemberEccentricity+TransverseOffsetMember)
-    * [.TransverseOffsetSurface(reference_surface, alignment)](#MemberEccentricity+TransverseOffsetSurface)
-    * [.TransverseOffsetNone()](#MemberEccentricity+TransverseOffsetNone)
 
 <a name="new_MemberEccentricity_new"></a>
 
@@ -293,35 +216,6 @@ Set off transverse offset
 
 ## MemberHinge
 **Kind**: global class
-
-* [MemberHinge](#MemberHinge)
-    * [new MemberHinge(no, members_start_list, members_end_list, comment, params)](#new_MemberHinge_new)
-    * [.Translational(no, members_start_list, members_end_list, axial_release_n, axial_release_vy, axial_release_vz, comment, params)](#MemberHinge+Translational) ⇒ <code>Object</code>
-    * [.Rotational(no, members_start_list, members_end_list, moment_release_mt, moment_release_my, moment_release_mz, comment, params)](#MemberHinge+Rotational) ⇒ <code>Object</code>
-    * [.PartialActivityTranslationalX(negative_zone_values, positive_zone_values)](#MemberHinge+PartialActivityTranslationalX)
-    * [.PartialActivityTranslationalY(negative_zone_values, positive_zone_values)](#MemberHinge+PartialActivityTranslationalY)
-    * [.PartialActivityTranslationalZ(negative_zone_values, positive_zone_values)](#MemberHinge+PartialActivityTranslationalZ)
-    * [.PartialActivityRotationalX(negative_zone_values, positive_zone_values)](#MemberHinge+PartialActivityRotationalX)
-    * [.PartialActivityRotationalY(negative_zone_values, positive_zone)](#MemberHinge+PartialActivityRotationalY)
-    * [.PartialActivityRotationalZ(negative_zone_values, positive_zone_values)](#MemberHinge+PartialActivityRotationalZ)
-    * [.DiagramTranslationalX(diagram_values)](#MemberHinge+DiagramTranslationalX)
-    * [.DiagramTranslationalY(diagram_values)](#MemberHinge+DiagramTranslationalY)
-    * [.DiagramTranslationalZ(diagram_values)](#MemberHinge+DiagramTranslationalZ)
-    * [.DiagramRotationalX(diagram_values)](#MemberHinge+DiagramRotationalX)
-    * [.DiagramRotationalY(diagram_values)](#MemberHinge+DiagramRotationalY)
-    * [.DiagramRotationalZ(diagram_values)](#MemberHinge+DiagramRotationalZ)
-    * [.FrictionVyTranslationalX(friction_coefficient_x, spring_constant_x)](#MemberHinge+FrictionVyTranslationalX)
-    * [.FrictionVzTranslationalX(friction_coefficient_x, spring_constant_x)](#MemberHinge+FrictionVzTranslationalX)
-    * [.FrictionVyVzTranslationalX(friction_coefficient_x, spring_constant_x)](#MemberHinge+FrictionVyVzTranslationalX)
-    * [.FrictionVyPlusVzTranslationalX(friction_coefficient_xy, friction_coefficient_xz, spring_constant_x)](#MemberHinge+FrictionVyPlusVzTranslationalX)
-    * [.FrictionNTranslationalY(friction_coefficient_y, spring_constant_y)](#MemberHinge+FrictionNTranslationalY)
-    * [.FrictionVzTranslationalY(friction_coefficient_y, spring_constant_y)](#MemberHinge+FrictionVzTranslationalY)
-    * [.FrictionNVzTranslationalY(friction_coefficient_y, spring_constant_y)](#MemberHinge+FrictionNVzTranslationalY)
-    * [.FrictionNPlusVzTranslationalY(friction_coefficient_yx, friction_coefficient_yz, spring_constant_y)](#MemberHinge+FrictionNPlusVzTranslationalY)
-    * [.FrictionNTranslationalZ(friction_coefficient_z, spring_constant_z)](#MemberHinge+FrictionNTranslationalZ)
-    * [.FrictionVyTranslationalZ(friction_coefficient_z, spring_constant_z)](#MemberHinge+FrictionVyTranslationalZ)
-    * [.FrictionNVyTranslationalZ(friction_coefficient_z, spring_constant_z)](#MemberHinge+FrictionNVyTranslationalZ)
-    * [.FrictionNPlusVyTranslationalZ(friction_coefficient_zx, friction_coefficient_zy, spring_constant_z)](#MemberHinge+FrictionNPlusVyTranslationalZ)
 
 <a name="new_MemberHinge_new"></a>
 
@@ -666,20 +560,6 @@ Sets translational friction N+Vy values for uz
 ## MemberNonlinearity
 **Kind**: global class
 
-* [MemberNonlinearity](#MemberNonlinearity)
-    * [new MemberNonlinearity(no, comment, params)](#new_MemberNonlinearity_new)
-    * [.FailureIfTension(no, members, comment, params)](#MemberNonlinearity+FailureIfTension) ⇒ <code>Object</code>
-    * [.FailureIfCompression(no, members, comment, params)](#MemberNonlinearity+FailureIfCompression) ⇒ <code>Object</code>
-    * [.FailureIfTensionWithSlippage(no, members, slippage, comment, params)](#MemberNonlinearity+FailureIfTensionWithSlippage) ⇒ <code>Object</code>
-    * [.FailureIfCompressionWithSlippage(no, members, slippage, comment, params)](#MemberNonlinearity+FailureIfCompressionWithSlippage) ⇒ <code>Object</code>
-    * [.Slippage(no, members, slippage, comment, params)](#MemberNonlinearity+Slippage) ⇒ <code>Object</code>
-    * [.TearingUnderTension(no, members, tension_force, comment, params)](#MemberNonlinearity+TearingUnderTension) ⇒ <code>Object</code>
-    * [.YieldingUnderTension(no, members, tension_force, comment, params)](#MemberNonlinearity+YieldingUnderTension) ⇒ <code>Object</code>
-    * [.TearingUnderCompression(no, members, compression_force, comment, params)](#MemberNonlinearity+TearingUnderCompression) ⇒ <code>Object</code>
-    * [.YieldingUnderCompression(no, members, compression_force, comment, params)](#MemberNonlinearity+YieldingUnderCompression) ⇒ <code>Object</code>
-    * [.Tearing(no, members, compression_force, tension_force, comment, params)](#MemberNonlinearity+Tearing) ⇒ <code>Object</code>
-    * [.Yielding(no, members, compression_force, tension_force, comment, params)](#MemberNonlinearity+Yielding) ⇒ <code>Object</code>
-
 <a name="new_MemberNonlinearity_new"></a>
 
 ### new MemberNonlinearity(no, comment, params)
@@ -874,11 +754,6 @@ Creates member yielding nonlinearity
 ## MemberResultIntermediatePoint
 **Kind**: global class
 
-* [MemberResultIntermediatePoint](#MemberResultIntermediatePoint)
-    * [new MemberResultIntermediatePoint(no, members, comment, params)](#new_MemberResultIntermediatePoint_new)
-    * [.UniformDistances(divisions_count, notes)](#MemberResultIntermediatePoint+UniformDistances)
-    * [.DivisionOrdinates(division_ordinates, notes, absolute, clear_ordinates)](#MemberResultIntermediatePoint+DivisionOrdinates)
-
 <a name="new_MemberResultIntermediatePoint_new"></a>
 
 ### new MemberResultIntermediatePoint(no, members, comment, params)
@@ -923,15 +798,6 @@ Sets division ordinates
 
 ## MemberStiffnessModification
 **Kind**: global class
-
-* [MemberStiffnessModification](#MemberStiffnessModification)
-    * [new MemberStiffnessModification(no, structure_modifications, comment, params)](#new_MemberStiffnessModification_new)
-    * [.TotalStiffnessFactor(total_stiffness)](#MemberStiffnessModification+TotalStiffnessFactor)
-    * [.PartialStiffnessFactors(axial_stiffness, bending_stiffness_y, bending_stiffness_z, shear_stiffness_y, shear_stiffness_z, torsional_stiffness, weight)](#MemberStiffnessModification+PartialStiffnessFactors)
-    * [.ConcreteStructuresAci(component_type)](#MemberStiffnessModification+ConcreteStructuresAci)
-    * [.ConcreteStructuresCsa(component_type)](#MemberStiffnessModification+ConcreteStructuresCsa)
-    * [.SteelStructuresAisc(determine_tau_b, design_method)](#MemberStiffnessModification+SteelStructuresAisc)
-    * [.SteelStructuresCSA(determine_tau_b, axial_stiffness, bending_stiffness_y, bending_stiffness_z, shear_stiffness_y, shear_stiffness_z, torsional_stiffness)](#MemberStiffnessModification+SteelStructuresCSA)
 
 <a name="new_MemberStiffnessModification_new"></a>
 
@@ -1028,172 +894,3 @@ Sets steel structures CSA
 | torsional_stiffness | <code>Number</code> | Torsional stiffness, can be undefined. If defined, apply τb is set to true. |
 
 <a name="setTransverseOffset"></a>
-
-## setTransverseOffset(memberEccentricity, reference_type, reference, reference_node_index, alignment_type)
-Sets transverse offset (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| memberEccentricity | <code>Object</code> | Member eccentricity to be set |
-| reference_type | <code>String</code> | Reference type ("None", "Member", "Surface") |
-| reference | <code>Number</code> | object index	Reference member or surface index |
-| reference_node_index | <code>Number</code> | Reference member node index, in case of surface is undefined |
-| alignment_type | <code>String</code> | For member offset:	SECTION_ALIGNMENT_LEFT_TOP, 																	SECTION_ALIGNMENT_CENTER_TOP, 																	SECTION_ALIGNMENT_RIGHT_TOP, 																	SECTION_ALIGNMENT_LEFT_CENTER, 																	SECTION_ALIGNMENT_CENTER_CENTER, 																	SECTION_ALIGNMENT_RIGHT_CENTER, 																	SECTION_ALIGNMENT_LEFT_BOTTOM, 																	SECTION_ALIGNMENT_CENTER_BOTTOM, 																	SECTION_ALIGNMENT_RIGHT_BOTTOM. 												For surface offset:	SECTION_ALIGNMENT_CENTER_TOP, 																	SECTION_ALIGNMENT_CENTER_CENTER, 																	SECTION_ALIGNMENT_CENTER_BOTTOM. |
-
-<a name="createMemberEccentricity"></a>
-
-## createMemberEccentricity(no, members_start_list, members_end_list, comment, params) ⇒ <code>Object</code>
-Creates member eccentricity
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created member eccentricity
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of member eccentricity, can be undefined |
-| members_start_list | <code>Array</code> | Members start, can be undefined |
-| members_end_list | <code>Array</code> | Members end, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Member eccentricity parameters, can be undefined |
-
-<a name="setRelativeValues"></a>
-
-## setRelativeValues(member_eccentricity, alignment_type)
-Sets member eccentricity for relative to section type (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member_eccentricity | <code>Object</code> | Member eccentricity to be set |
-| alignment_type | <code>String</code> | Alignment: 	SECTION_ALIGNMENT_LEFT_TOP, 														SECTION_ALIGNMENT_CENTER_TOP, 														SECTION_ALIGNMENT_RIGHT_TOP, 														SECTION_ALIGNMENT_LEFT_CENTER, 														SECTION_ALIGNMENT_CENTER_CENTER, 														SECTION_ALIGNMENT_RIGHT_CENTER, 														SECTION_ALIGNMENT_LEFT_BOTTOM, 														SECTION_ALIGNMENT_CENTER_BOTTOM, 														SECTION_ALIGNMENT_RIGHT_BOTTOM. |
-
-<a name="getAlignmentParts"></a>
-
-## getAlignmentParts(alignment) ⇒ <code>Array</code>
-Creates horizontal and vertical strings of alignment (private)
-
-**Kind**: global function
-**Returns**: <code>Array</code> - Horizontal and vertical strings of alignment
-
-| Param | Type | Description |
-| --- | --- | --- |
-| alignment | <code>String</code> | Alignment string |
-
-<a name="setAbsoluteValues"></a>
-
-## setAbsoluteValues(memberEccentricity, offset_x, offset_y, offset_z, coordinate_system)
-Sets member eccentricity for absolute type (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| memberEccentricity | <code>Object</code> | Member eccentricity to be set |
-| offset_x | <code>Number</code> | Eccentricity in X |
-| offset_y | <code>Number</code> | Eccentricity in Y |
-| offset_z | <code>Number</code> | Eccentricity in Z |
-| coordinate_system | <code>Number</code> | Coordinate system, can be undefined. Default value is "Local xyz". |
-
-<a name="setPartialActivityZoneValues"></a>
-
-## setPartialActivityZoneValues(member_hinge, zone_values, param_type_name, param_slippage_name, param_displacement_name, param_force_name)
-Sets values for partial activity zone (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member_hinge | <code>Object</code> | Member hinge to which values has to be set |
-| zone_values | <code>Array</code> | Negative / positive zone values 												- "Complete": [0] 												- "Fixed from release displacement": [1, u(x|y|z)-|φ(x|y|z)-, u(x|y|z)s-|φ(x|y|z)s-] / [1, u(x|y|z)+|φ(x|y|z)+, u(x|y|z)s+|φ(x|y|z)s+] 												- "Tearing from release force": [2, N-, u(x|y|z)s-|φ(x|y|z)s-] / [2, N+, u(x|y|z)s+|φ(x|y|z)s+] 												- "Yielding from release force": [3, N-, u(x|y|z)s-|φ(x|y|z)s-] / [3, N+, u(x|y|z)s+|φ(x|y|z)s+] 												- "Spring ineffectiveness": [4] |
-| param_type_name | <code>String</code> | Parameter name for partial activity zone name |
-| param_slippage_name | <code>String</code> | Parameter name for partial activity slippage name |
-| param_displacement_name | <code>String</code> | Parameter name for partial activity displacement name |
-| param_force_name | <code>String</code> | Parameter name for partial activity force name |
-
-<a name="setMainHingeValues"></a>
-
-## setMainHingeValues(member_hinge, values, property_1, property_2) ⇒
-Sets values to member hinge (private)
-
-**Kind**: global function
-**Returns**: Returns modified member hinge
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member_hinge | <code>Object</code> | Member hinge |
-| values | <code>Array</code> | Values to be set, [Translational/Rotational, Spring constant, Nonlinearity] 										- Values can be in two formats: 											[bool, float, int] - if bool is true (translation is enabled), then can be specified next two values (spring constant and nonlinearity) 											[bool, int]		   - if bool is false (translation is disabled), then can be specified only next one value (nonlinearity) 											Nonlinearity: can be string name or index: None (0), Fixed if negative (1), Fixed if positive (2), Failure all if negative (3), Failure all if positive (4), 														  Partial activity (5), Diagram (6), Stiffness diagram (7), Friction direction 1 (8), Friction direction 2 (9), 														  Friction direction 1 2 (10), Friction direction 1 + 2 (11) |
-| property_1 | <code>String</code> | Spring constant string name |
-| property_2 | <code>String</code> | Nonlinearity string name |
-
-<a name="createMemberHinge"></a>
-
-## createMemberHinge(no, members_start_list, members_end_list, comment, params) ⇒ <code>Object</code>
-Creates member hinge (private)
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created member hinge
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of member hinge, van be undefined |
-| members_start_list | <code>Array</code> | Member start, can be undefined |
-| members_end_list | <code>Array</code> | Member end, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Member hinge parameters, can be undefined |
-
-<a name="setParameters"></a>
-
-## setParameters(member_nonlinearity, parameters, param_1_name, param_2_name)
-Sets parameters to member nonlinearity (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member_nonlinearity | <code>Object</code> | Member nonlinearity to be setParameters |
-| parameters | <code>Array</code> | Nonlinearity parameters |
-| param_1_name | <code>String</code> | Name of first parameter |
-| param_2_name | <code>String</code> | Name of first parameter, can be undefined |
-
-<a name="createNonlinearity"></a>
-
-## createNonlinearity(no, member_list, comment, params) ⇒ <code>Object</code>
-Creates member nonlinearity
-
-**Kind**: global function
-**Returns**: <code>Object</code> - Created member nonlinearity
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of member nonlinearity, can be undefined |
-| member_list | <code>Array</code> | Assigned members |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Member nonlinearity parameters, can be undefined |
-
-<a name="DistancesAreAbsolute"></a>
-
-## DistancesAreAbsolute(memberResultIntermediatePoint, absolute)
-Sets division ordinates as absolute (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| memberResultIntermediatePoint | <code>Object</code> | Member result intermediate point to be set |
-| absolute | <code>Boolean</code> | Division ordinates are absolute, can be undefined (default value is true) |
-
-<a name="setConcreteStructuresComponentType"></a>
-
-## setConcreteStructuresComponentType(member_stiffness_modification, component_type)
-Sets concrete structures parameters (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| member_stiffness_modification | <code>Object</code> | Member stiffness modification to set |
-| component_type | <code>Number</code> | Component type: Columns (1), Walls uncracked (2), Walls cracked (3), Beams (4), Flat plates and flat stabs (5). Can be undefined |
-

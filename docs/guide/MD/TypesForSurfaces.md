@@ -1,51 +1,9 @@
 # Types For Surfaces
 
-## Classes
-
-<dl>
-<dt><a href="#SurfaceEccentricity">SurfaceEccentricity</a></dt>
-<dd></dd>
-<dt><a href="#SurfaceMeshRefinement">SurfaceMeshRefinement</a></dt>
-<dd></dd>
-<dt><a href="#SurfaceStiffnessModification">SurfaceStiffnessModification</a></dt>
-<dd></dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#createSurfaceEccentricity">createSurfaceEccentricity(no, surfaces_list, comment, params)</a> ⇒</dt>
-<dd><p>Creates base surface eccentricity</p>
-</dd>
-<dt><a href="#getAlignment">getAlignment(alignment)</a> ⇒</dt>
-<dd><p>Convert string representation of alignment (private)</p>
-</dd>
-<dt><a href="#createSurfaceMeshRefinement">createSurfaceMeshRefinement(no, surface_list, comment, params)</a> ⇒</dt>
-<dd><p>Creates surface mesh refinement (private)</p>
-</dd>
-<dt><a href="#setConcreteStructures">setConcreteStructures(surface_stiffness_modification, stiffness_modification_type, component_type)</a></dt>
-<dd><p>Modifies concrete structures surface stiffness modification (private)</p>
-</dd>
-<dt><a href="#createSurfaceStiffnessModification">createSurfaceStiffnessModification(no, structural_modification, comment, params)</a> ⇒</dt>
-<dd><p>Creates surface stiffness modification</p>
-</dd>
-<dt><a href="#setParameter">setParameter(surface_stiffness_modification, parameter_name, parameter_value)</a></dt>
-<dd><p>Sets parameter to surface stiffness modification object (private)</p>
-</dd>
-<dt><a href="#setStiffnessMatrixValues">setStiffnessMatrixValues(arguments)</a></dt>
-<dd><p>Set load parameters</p>
-</dd>
-</dl>
-
 <a name="SurfaceEccentricity"></a>
 
 ## SurfaceEccentricity
 **Kind**: global class
-
-* [SurfaceEccentricity](#SurfaceEccentricity)
-    * [new SurfaceEccentricity(no, surfaces_list, comment, params)](#new_SurfaceEccentricity_new)
-    * [.OffsetAndThicknessAssignment(no, surfaces_list, offset, thickness_alignment, comment, params)](#SurfaceEccentricity+OffsetAndThicknessAssignment)
-    * [.TransverseOffset(reference_type, reference_no, offset_alignment)](#SurfaceEccentricity+TransverseOffset)
 
 <a name="new_SurfaceEccentricity_new"></a>
 
@@ -113,14 +71,6 @@ Creates surface mesh refinement
 
 ## SurfaceStiffnessModification
 **Kind**: global class
-
-* [SurfaceStiffnessModification](#SurfaceStiffnessModification)
-    * [new SurfaceStiffnessModification(no, structural_modification, comment, params)](#new_SurfaceStiffnessModification_new)
-    * [.TotalStiffnessFactor(no, structural_modification, total_stiffness, comment, params)](#SurfaceStiffnessModification+TotalStiffnessFactor) ⇒
-    * [.PartialStiffnessesFactors(no, structural_modification, bending_stiffness_factor, shear_stiffness, membrane_stiffness, eccentric_effects, weight, comment, params)](#SurfaceStiffnessModification+PartialStiffnessesFactors) ⇒
-    * [.StiffnessMatrixElementsFactors(no, structural_modification, bending_torsional_stiffness_elements, shear_stiffness_elements, membrane_stiffness_elements, eccentric_stiffness_elements, comment, params)](#SurfaceStiffnessModification+StiffnessMatrixElementsFactors) ⇒
-    * [.ConcreteStructuresACI(no, structural_modification, component_type, comment, params)](#SurfaceStiffnessModification+ConcreteStructuresACI) ⇒
-    * [.ConcreteStructuresCSA(no, structural_modification, component_type, comment, params)](#SurfaceStiffnessModification+ConcreteStructuresCSA) ⇒
 
 <a name="new_SurfaceStiffnessModification_new"></a>
 
@@ -224,96 +174,3 @@ Creates concrete structure CSA type of surface stiffness modification
 | params | <code>Object</code> | Surface stiffness modification's parameters, can be undefined |
 
 <a name="createSurfaceEccentricity"></a>
-
-## createSurfaceEccentricity(no, surfaces_list, comment, params) ⇒
-Creates base surface eccentricity
-
-**Kind**: global function
-**Returns**: Surface eccentricity
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of surface eccentricity, can be undefined |
-| surfaces_list | <code>Array</code> | List of surfaces indexes |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Surface eccentricity's parameters, can be undefined |
-
-<a name="getAlignment"></a>
-
-## getAlignment(alignment) ⇒
-Convert string representation of alignment (private)
-
-**Kind**: global function
-**Returns**: Surface eccentricity alignment
-
-| Param | Type | Description |
-| --- | --- | --- |
-| alignment | <code>String</code> | Surface eccentricity alignment |
-
-<a name="createSurfaceMeshRefinement"></a>
-
-## createSurfaceMeshRefinement(no, surface_list, comment, params) ⇒
-Creates surface mesh refinement (private)
-
-**Kind**: global function
-**Returns**: Created surface mesh refinement
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of surface stiffness modification, can be undefined |
-| surface_list | <code>Array</code> | List of surface indexes, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Surface stiffness modification's parameters, can be undefined |
-
-<a name="setConcreteStructures"></a>
-
-## setConcreteStructures(surface_stiffness_modification, stiffness_modification_type, component_type)
-Modifies concrete structures surface stiffness modification (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| surface_stiffness_modification | <code>Object</code> | Surface stiffness modification to be set |
-| stiffness_modification_type | <code>String</code> | Stiffness modification type |
-| component_type | <code>Number</code> | Component type (1 - Columns, 2 - Walls uncracked, 3 - Walls cracked, 4 - Beams, 5 - Flat plates and flat slabs), can be undefined (Columns type as default) |
-
-<a name="createSurfaceStiffnessModification"></a>
-
-## createSurfaceStiffnessModification(no, structural_modification, comment, params) ⇒
-Creates surface stiffness modification
-
-**Kind**: global function
-**Returns**: Created surface stiffness modification
-
-| Param | Type | Description |
-| --- | --- | --- |
-| no | <code>Number</code> | Index of surface stiffness modification |
-| structural_modification | <code>Number</code> | Structural modification index, can be undefined |
-| comment | <code>String</code> | Comment, can be undefined |
-| params | <code>Object</code> | Surface stiffness modification's parameters, can be undefined |
-
-<a name="setParameter"></a>
-
-## setParameter(surface_stiffness_modification, parameter_name, parameter_value)
-Sets parameter to surface stiffness modification object (private)
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| surface_stiffness_modification | <code>Object</code> | Surface stiffness modification to be set |
-| parameter_name | <code>String</code> | Name of parameter |
-| parameter_value | <code>Number</code> | Value to be set |
-
-<a name="setStiffnessMatrixValues"></a>
-
-## setStiffnessMatrixValues(arguments)
-Set load parameters
-
-**Kind**: global function
-
-| Param | Type | Description |
-| --- | --- | --- |
-| arguments | <code>Array</code> | Arguments: arg[0] - surface stiffness modification, arg[1] - array of stiffness matrix values to set, arg[2, 3 ... n] - stiffness matrix parameters to be set |
-

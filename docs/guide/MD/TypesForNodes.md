@@ -1,5 +1,3 @@
-# Types For Nodes
-
 ## Functions
 
 <dl>
