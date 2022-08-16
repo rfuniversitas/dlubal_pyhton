@@ -2242,6 +2242,9 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
     * **layers** (*list of lists*) - Layers Table as an Array
 
 
+        > layers = [[thickness_type, material, thickness], ...]
+
+
     * **comment** (*str*, *optional*) – Comments
 
 
@@ -2274,25 +2277,25 @@ Go to *[[source]](https://github.com/Dlubal-Software/RFEM_Python_Client/tree/mai
 
     * **consideration_of_self_weight** (*list*) – Consideration of Self-Weight Parameters
     
-        > * for consideration_of_self_weight == ‘parameter defined’ 
+        > * for consideration_of_self_weight == ‘parameter defined’     
         consideration_of_self_weight = [ThicknessShapeOrthotropySelfWeightDefinitionType.SELF_WEIGHT_COMPUTED_FROM_PARAMETERS, fictitious_thickness]
 
-        > * for consideration_of_self_weight == ‘user-defined fictitious thickness’ 
+        > * for consideration_of_self_weight == ‘user-defined fictitious thickness’     
         consideration_of_self_weight = [ThicknessShapeOrthotropySelfWeightDefinitionType.SELF_WEIGHT_DEFINED_VIA_FICTITIOUS_THICKNESS, fictitious_thickness]
 
-        > * for consideration_of_self_weight == ‘user-defined’  
+        > * for consideration_of_self_weight == ‘user-defined’      
         consideration_of_self_weight = [ThicknessShapeOrthotropySelfWeightDefinitionType.SELF_WEIGHT_DEFINED_VIA_WEIGHT, self_weight]
 
 
     * **parameters** (*list*) – Parameters List of chosen Orthotropy Type
     
-        > * for orthotropy_type == ThicknessOrthotropyType.EFFECTIVE_THICKNESS: 
+        > * for orthotropy_type == ThicknessOrthotropyType.EFFECTIVE_THICKNESS:     
         parameters = [effective_thickness_x, effective_thickness_y]
 
         > * for orthotropy_type == ThicknessOrthotropyType.COUPLING:    
         parameters = [coupling_thickness, coupling_spacing, coupling_width]
 
-        > * for orthotropy_type == ThicknessOrthotropyType.UNIDIRECTIONAL_RIBBED_PLATE: 
+        > * for orthotropy_type == ThicknessOrthotropyType.UNIDIRECTIONAL_RIBBED_PLATE:     
         parameters = [slab_thickness, rib_height, rib_spacing, rib_width]
 
         > * for orthotropy_type == ThicknessOrthotropyType.BIDIRECTIONAL_RIBBED_PLATE:  
