@@ -14,7 +14,7 @@ try:
 except:
     print('Error: Connection to server failed!')
     print('Please check:')
-    print('- If you have started RFEM application')
+    print('- If you have started RSECTION application')
     print('- If all RSECTION dialogs are closed')
     print('- If server port range is set correctly')
     print('- If you have a valid Web Services license')
@@ -169,7 +169,7 @@ def Calculate_all(generateXmlSolverInput: bool = False, model = Model):
 
     Args:
         generateXmlSolverInput (bool): Generate XML Solver Input
-        model (RFEM Class, optional): Model to be edited
+        model (RSECTION Class, optional): Model to be edited
     '''
     model.clientModel.service.calculate_all(generateXmlSolverInput)
 
@@ -221,7 +221,7 @@ def ConvertStrToListOfInt(st):
     """
     This function coverts string to list of integers.
     Args:
-        st (str): RSTAB / RFEM Common String
+        st (str): RSTAB / RFEM / RSECTION Common String
     """
     st = ConvertToDlString(st)
     lstInt = []
@@ -239,7 +239,7 @@ def ConvertStrToListOfInt(st):
 
 def CheckIfMethodOrTypeExists(modelClient, method_or_type, unitTestMode=False):
     """
-    Check if SOAP method or type is present in your version of RFEM/RSTAB.
+    Check if SOAP method or type is present in your version of RFEM/RSTAB/RSECTION.
     Use it only in your examples.
     Unit tests except msg from SUDS where this is checked already.
 
@@ -264,5 +264,3 @@ def CheckIfMethodOrTypeExists(modelClient, method_or_type, unitTestMode=False):
             assert False, "WARNING: Used method/type: %s is not implemented in Web Services yet." % (method_or_type)
 
     return not unitTestMode
-
-
