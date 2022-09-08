@@ -13,10 +13,18 @@ class PointType(Enum):
     '''
     Point Type | Enumeration
     '''
-    TYPE_STANDARD = range(1)
+    TYPE_STANDARD, TYPE_BETWEEN_TWO_POINTS = range(2)
 
 class PointCoordinateSystemType(Enum):
     '''
     Point Coordinate System Type | Enum
     '''
     COORDINATE_SYSTEM_CARTESIAN = range(1)
+
+class PointReferenceType(Enum):
+    '''
+    Point Reference Type| Enum
+    '''
+    REFERENCE_TYPE_L, REFERENCE_TYPE_Y, REFERENCE_TYPE_Z = range(3)
+
+
