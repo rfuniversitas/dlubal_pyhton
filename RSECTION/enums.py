@@ -13,7 +13,7 @@ class PointType(Enum):
     '''
     Point Type | Enumeration
     '''
-    TYPE_STANDARD, TYPE_BETWEEN_TWO_POINTS = range(2)
+    TYPE_STANDARD, TYPE_BETWEEN_TWO_POINTS, TYPE_BETWEEN_TWO_LOCATIONS = range(3)
 
 class PointCoordinateSystemType(Enum):
     '''
