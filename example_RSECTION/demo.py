@@ -43,6 +43,7 @@ if __name__ == '__main__':
     Line.Arc(3, [1, 3], [0.1,0.3], LineArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_ARC_CONTROL_POINT)
     Line.Circle(4, [-0.1, 0.0], 0.1)
     Line.Ellipse(5, [7 ,8], [-0.15,0.16])
+    Line.Parabola(6, [1, 8], [-0.15,0.35], 0.1)
 
     Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 

@@ -106,7 +106,7 @@ class Line():
         # Type
         clientObject.type = LineType.TYPE_ARC.name
 
-        # Points No.
+        # Points No. and Control Point Coordinates
         clientObject.arc_first_point = points_no[0]
         clientObject.arc_second_point = points_no[1]
         clientObject.arc_alpha_adjustment_target = alpha_adjustment_target.name
@@ -177,7 +177,7 @@ class Line():
 
         '''
         Args:
-            control_point (list): Control Point coordinate for Arc in [Y, Z]
+            control_point (list): Control Point coordinate for Ellipse in [Y, Z]
 
         '''
 
@@ -193,7 +193,7 @@ class Line():
         # Type
         clientObject.type = LineType.TYPE_ELLIPSE.name
 
-        # Points No.
+        # Points No. and Ellipse Control Point Coordinates
         clientObject.ellipse_first_point = points_no[0]
         clientObject.ellipse_second_point = points_no[1]
         clientObject.ellipse_control_point_y = control_point[0]
@@ -209,5 +209,53 @@ class Line():
 
         # Add Line to client model
         model.clientModel.service.set_line(clientObject)
+
+    @staticmethod
+    def Parabola(
+                 no: int = 1,
+                 points_no: list = [1, 2],
+                 control_point: list = None,
+                 alpha: float = 0.0,
+                 comment: str = '',
+                 params: dict = None, model = Model):
+
+        '''
+        Args:
+            control_point (list): Control Point coordinate for Parabola in [Y, Z]
+            alpha (float): Alpha Angle (in Radians)
+
+        '''
+
+        # Client model | Line
+        clientObject = model.clientModel.factory.create('ns0:line')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Line No.
+        clientObject.no = no
+
+        # Type
+        clientObject.type = LineType.TYPE_PARABOLA.name
+
+        # Points No. and Parabola Control Point Coordinates
+        clientObject.parabola_first_point = points_no[0]
+        clientObject.parabola_second_point = points_no[1]
+        clientObject.parabola_control_point_y = control_point[0]
+        clientObject.parabola_control_point_z = control_point[1]
+
+        clientObject.parabola_alpha = alpha
+
+        # Comment
+        clientObject.comment = comment
+
+        # Adding optional parameters via dictionary
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+        # Add Line to client model
+        model.clientModel.service.set_line(clientObject)
+
 
 
