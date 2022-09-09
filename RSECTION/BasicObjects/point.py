@@ -286,7 +286,6 @@ class Point():
                  line_no: int = 1,
                  point_reference = PointReferenceType.REFERENCE_TYPE_L,
                  parameters = [True, 50],
-                 offset: float = 0.0,
                  comment: str = '',
                  params: dict = None,
                  model = Model):

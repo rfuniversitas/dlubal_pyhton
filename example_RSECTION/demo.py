@@ -13,6 +13,7 @@ from RSECTION.initModel import Model
 from RSECTION.BasicObjects.material import Material
 from RSECTION.BasicObjects.section import Section
 from RSECTION.BasicObjects.point import Point
+from RSECTION.BasicObjects.line import Line
 from RSECTION.enums import PointReferenceType
 
 if __name__ == '__main__':
@@ -35,6 +36,10 @@ if __name__ == '__main__':
     # Point.BetweenTwoPoints(7, 1, 2, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.101], 0.1)
     Point.BetweenTwoLocations(7, 0.0, 0.0, -0.2, 0.4, PointReferenceType.REFERENCE_TYPE_L, [True, 0.5], 0.0)
     Point.BetweenTwoLocations(8, -0.2, 0.0, 0.0, 0.4, PointReferenceType.REFERENCE_TYPE_Z, [False, 0.2], -0.1)
+    # Point.DeletePoint('7 8')
+
+    Line(1, '1 2')
+    Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 
 
     Model.clientModel.service.finish_modification()
