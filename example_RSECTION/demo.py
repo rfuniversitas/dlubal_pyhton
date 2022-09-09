@@ -39,6 +39,8 @@ if __name__ == '__main__':
     # Point.DeletePoint('7 8')
 
     Line(1, '1 2')
+    Line.Polyline(2, '1 3')
+
     Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 
 

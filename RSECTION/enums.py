@@ -27,4 +27,10 @@ class PointReferenceType(Enum):
     '''
     REFERENCE_TYPE_L, REFERENCE_TYPE_Y, REFERENCE_TYPE_Z = range(3)
 
+class LineType(Enum):
+    '''
+    Line Type | Enumeration
+    '''
+    TYPE_POLYLINE, TYPE_ARC = range(2)
+
 
