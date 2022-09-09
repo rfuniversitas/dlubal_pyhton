@@ -16,7 +16,7 @@ class Point():
 
         '''
 
-        #Cleint model | None
+        #Cleint model | Point
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
@@ -53,7 +53,7 @@ class Point():
         Args:
         '''
 
-        # Client model | Node
+        # Client model | Point
         clientObject = model.clientModel.factory.create('ns0:point')
 
         # Clears object atributes | Sets all atributes to None
@@ -180,7 +180,7 @@ class Point():
             for key in params:
                 clientObject[key] = params[key]
 
-        # Add Node to client model
+        # Add Point to client model
         model.clientModel.service.set_point(clientObject)
 
     @staticmethod
@@ -213,11 +213,11 @@ class Point():
         # Point Type
         clientObject.type = PointType.TYPE_BETWEEN_TWO_LOCATIONS.name
 
-        # Start Point Coordinates
+        # Start Location Coordinates
         clientObject.between_two_locations_start_point_coordinate_1 = start_point_y
         clientObject.between_two_locations_start_point_coordinate_2 = start_point_z
 
-        # End Point Coordinates
+        # End Location Coordinates
         clientObject.between_two_locations_end_point_coordinate_1 = end_point_y
         clientObject.between_two_locations_end_point_coordinate_2 = end_point_z
 
@@ -276,7 +276,89 @@ class Point():
             for key in params:
                 clientObject[key] = params[key]
 
-        # Add Node to client model
+        # Add Point to client model
+        model.clientModel.service.set_point(clientObject)
+
+    @staticmethod
+    def OnLine(
+                 no: int = 1,
+                 line_no: int = 1,
+                 point_reference = PointReferenceType.REFERENCE_TYPE_L,
+                 parameters = [True, 50],
+                 offset: float = 0.0,
+                 comment: str = '',
+                 params: dict = None,
+                 model = Model):
+
+        '''
+        Args:
+        '''
+
+        # Client model | Point
+        clientObject = model.clientModel.factory.create('ns0:point')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Point No.
+        clientObject.no = no
+
+        # Point Type
+        clientObject.type = PointType.TYPE_ON_LINE.name
+
+        # Line No.
+        clientObject.on_line_reference_line = line_no
+
+        # Point Reference and Distance between Point and Start Point with Offset
+        clientObject.reference_type = point_reference.name
+
+        if clientObject.reference_type == "REFERENCE_TYPE_L":
+
+            if parameters[0]:  #if parameters[0]==True
+
+                if parameters[1] <= 0 or parameters[1] >= 1:
+                    raise Exception ('Warning: Please enter correct percentage value between 0.0 and 1.0')
+
+                else:
+                    clientObject.distance_from_start_relative = parameters[1]
+
+            else:
+                clientObject.distance_from_start_absolute = parameters[1]
+
+        elif clientObject.reference_type == "REFERENCE_TYPE_Y":
+
+            if parameters[0]:  #if parameters[0]==True
+
+                if parameters[1] <= 0 or parameters[1] >= 1:
+                    raise Exception ('Warning: Please enter correct percentage value as factor between 0.0 and 1.0')
+
+                else:
+                    clientObject.distance_from_start_relative = parameters[1]
+
+            else:
+                clientObject.distance_from_start_absolute = parameters[1]
+
+        elif clientObject.reference_type == "REFERENCE_TYPE_Z":
+
+            if parameters[0]:  #if parameters[0]==True
+
+                if parameters[1] <= 0 or parameters[1] >= 1:
+                    raise Exception ('Warning: Please enter correct percentage value between 0.0 and 1.0')
+
+                else:
+                    clientObject.distance_from_start_relative = parameters[1]
+
+            else:
+                clientObject.distance_from_start_absolute = parameters[1]
+
+        # Comment
+        clientObject.comment = comment
+
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+        # Add Point to client model
         model.clientModel.service.set_point(clientObject)
 
 
