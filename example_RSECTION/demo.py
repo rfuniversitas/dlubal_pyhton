@@ -46,7 +46,7 @@ if __name__ == '__main__':
     Line.Circle(4, [-0.1, 0.0], 0.1)
     Line.Ellipse(5, [7 ,8], [-0.15,0.16])
     Line.Parabola(6, [1, 8], [-0.15,0.35], 0.1)
-    Line.NURBS(7,'10 11', [[0,-0.2,1], [0.2,-0.3,1],[0.4,-0.1,1],[0.6,-0.2,1]],3)
+    Line.NURBS(7,'10 11', [[0,-0.2], [0.2,-0.3],[0.4,-0.1],[0.6,-0.2]],[1,1,1,1],3)
 
     Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 

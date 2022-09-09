@@ -262,6 +262,7 @@ class Line():
               no: int = 1,
               control_points: str = None,
               components: list = None,
+              weights: list = None,
               order: int = None,
               comment: str = '',
               params: dict = None, model = Model):
@@ -306,7 +307,7 @@ class Line():
             nurbs.no = i+1
             nurbs.row.global_coordinate_y = components[i][0]
             nurbs.row.global_coordinate_z = components[i][1]
-            nurbs.row.weight = components[i][2]
+            nurbs.row.weight = weights[i]
 
             clientObject.nurbs_control_points_by_components.line_nurbs_control_points_by_components.append(nurbs)
 
