@@ -124,3 +124,44 @@ class Line():
         # Add Line to client model
         model.clientModel.service.set_line(clientObject)
 
+    @staticmethod
+    def Circle(
+                no: int = 1,
+                center_of_cirle: list = [0.0, 0.0],
+                circle_radius: float = 0.1,
+                comment: str = '',
+                params: dict = None, model = Model):
+
+        '''
+        Args:
+
+        '''
+
+        # Client model | Line
+        clientObject = model.clientModel.factory.create('ns0:line')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Line No.
+        clientObject.no = no
+
+        # Type
+        clientObject.type = LineType.TYPE_CIRCLE.name
+
+        # Center of circle and Radius
+        clientObject.circle_center_coordinate_y = center_of_cirle[0]
+        clientObject.circle_center_coordinate_z = center_of_cirle[1]
+
+        clientObject.circle_radius = circle_radius
+
+        # Comment
+        clientObject.comment = comment
+
+        # Adding optional parameters via dictionary
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+
+

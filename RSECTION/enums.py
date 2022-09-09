@@ -31,7 +31,7 @@ class LineType(Enum):
     '''
     Line Type | Enumeration
     '''
-    TYPE_POLYLINE, TYPE_ARC = range(2)
+    TYPE_POLYLINE, TYPE_ARC, TYPE_CIRCLE = range(3)
 
 class LineArcAlphaAdjustmentTarget(Enum):
     '''
