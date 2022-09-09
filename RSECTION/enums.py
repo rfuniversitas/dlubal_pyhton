@@ -6,7 +6,7 @@ class ObjectTypes(Enum):
     Object Types
     '''
 
-    E_OBJECT_TYPE_MATERIAL, E_OBJECT_TYPE_SECTION = range(2)
+    E_OBJECT_TYPE_MATERIAL, E_OBJECT_TYPE_SECTION, E_OBJECT_TYPE_POINT = range(3)
 
 
 class PointType(Enum):
