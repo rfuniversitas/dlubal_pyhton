@@ -42,7 +42,7 @@ if __name__ == '__main__':
     Line.Polyline(2, '1 3')
     Line.Arc(3, [1, 3], [0.1,0.3], LineArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_ARC_CONTROL_POINT)
     Line.Circle(4, [-0.1, 0.0], 0.1)
-    Line(5, '7 8')
+    Line.Ellipse(5, [7 ,8], [-0.15,0.16])
 
     Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 
