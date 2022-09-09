@@ -257,5 +257,68 @@ class Line():
         # Add Line to client model
         model.clientModel.service.set_line(clientObject)
 
+    @staticmethod
+    def NURBS(
+              no: int = 1,
+              control_points: str = None,
+              components: list = None,
+              order: int = None,
+              comment: str = '',
+              params: dict = None, model = Model):
+
+        '''
+        Args:
+            control_points (str): String of Start Point and End Point (example: '1 2')
+            components (list of lists): Control Points List
+                component = [[start_point_x, start_point_y, weight],
+                             [control_point_x, control_point_y, weight],
+                             ....,
+                             [end_point_x, end_point, weight]]
+
+        '''
+
+        # Client model | Line
+        clientObject = model.clientModel.factory.create('ns0:line')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Line No.
+        clientObject.no = no
+
+        # Type
+        clientObject.type = LineType.TYPE_NURBS.name
+
+        # Control points
+        clientObject.definition_points = ConvertToDlString(control_points)
+
+        # Nurbs Order
+        if order > 1 and order <= len(components):
+            clientObject.nurbs_order = order
+        else:
+            print('Error: Please write Nurbs order in range 2 and number of Control Points!')
+
+        #Local Section Reduction Components
+        clientObject.nurbs_control_points_by_components = model.clientModel.factory.create('ns0:array_of_line_nurbs_control_points_by_components')
+
+        for i,j in enumerate(components):
+            nurbs = model.clientModel.factory.create('ns0:line_nurbs_control_points_by_components_row')
+            nurbs.no = i+1
+            nurbs.row.global_coordinate_y = components[i][0]
+            nurbs.row.global_coordinate_z = components[i][1]
+            nurbs.row.weight = components[i][2]
+
+            clientObject.nurbs_control_points_by_components.line_nurbs_control_points_by_components.append(nurbs)
+
+        # Comment
+        clientObject.comment = comment
+
+        # Adding optional parameters via dictionary
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+        # Add Line to client model
+        model.clientModel.service.set_line(clientObject)
 
 
