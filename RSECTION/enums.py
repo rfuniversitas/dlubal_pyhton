@@ -33,4 +33,8 @@ class LineType(Enum):
     '''
     TYPE_POLYLINE, TYPE_ARC = range(2)
 
-
+class LineArcAlphaAdjustmentTarget(Enum):
+    '''
+    Line Arc Alpha Adjustment Target | Enumeration
+    '''
+    ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, ALPHA_ADJUSTMENT_TARGET_ARC_CONTROL_POINT, ALPHA_ADJUSTMENT_TARGET_END_OF_ARC = range(3)

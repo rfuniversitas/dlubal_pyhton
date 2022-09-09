@@ -14,7 +14,7 @@ from RSECTION.BasicObjects.material import Material
 from RSECTION.BasicObjects.section import Section
 from RSECTION.BasicObjects.point import Point
 from RSECTION.BasicObjects.line import Line
-from RSECTION.enums import PointReferenceType
+from RSECTION.enums import LineArcAlphaAdjustmentTarget, PointReferenceType
 
 if __name__ == '__main__':
 
@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
     Line(1, '1 2')
     Line.Polyline(2, '1 3')
+    Line.Arc(3, [1, 3], [0.1,0.3], LineArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_ARC_CONTROL_POINT)
 
     Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 
