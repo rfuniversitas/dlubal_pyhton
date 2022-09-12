@@ -27,7 +27,7 @@ def test_material():
 
     material = Model.clientModel.service.get_material(1)
     assert material.no == 1
-    assert material.name == 'S275 | Isotropic | Linear Elastic'
+    assert material.name == 'S275 | CYS EN 1993-1-1:2009-03'
 
 def test_section():
 
@@ -114,4 +114,4 @@ def test_line():
     assert line_4.circle_radius == 0.1
     assert line_5.ellipse_second_point == 8
     assert line_6.parabola_alpha == 0.1
-    assert line_7.nurbs_control_points_by_components.row['weight'] == 1.0
+    assert line_7.nurbs_control_points_by_components[0][1].row['weight'] == 1.0
