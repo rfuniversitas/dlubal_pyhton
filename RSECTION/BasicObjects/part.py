@@ -37,15 +37,15 @@ class Part():
 
         # Integrated Objects
 
-        if integrated_objects:
+        if integrated_objects == True:
 
             if integrated_objects_auto == False:
 
-                clientObject.auto_detection_of_integrated_objects = False
+                clientObject.auto_detection_of_integrated_objects = integrated_objects_auto
                 clientObject.integrated_openings = ConvertToDlString(integrated_openings)
 
         else:
-            clientObject.has_integrated_objects = False
+            clientObject.has_integrated_objects = integrated_objects
 
         # Comment
         clientObject.comment = comment
