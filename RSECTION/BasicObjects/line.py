@@ -1,5 +1,5 @@
 from RSECTION.initModel import Model, clearAtributes, ConvertToDlString, ConvertStrToListOfInt
-from RSECTION.enums import LineType, LineArcAlphaAdjustmentTarget
+from RSECTION.enums import LineType, LineArcAlphaAdjustmentTarget, ObjectTypes
 
 
 class Line():
@@ -271,10 +271,11 @@ class Line():
         Args:
             control_points (str): String of Start Point and End Point (example: '1 2')
             components (list of lists): Control Points List
-                component = [[start_point_x, start_point_y, weight],
-                             [control_point_x, control_point_y, weight],
+                component = [[start_point_x, start_point_y],
+                             [control_point_x, control_point_y],
                              ....,
-                             [end_point_x, end_point, weight]]
+                             [end_point_x, end_point]]
+            weights (list): Control Points Weights
 
         '''
 
@@ -321,5 +322,17 @@ class Line():
 
         # Add Line to client model
         model.clientModel.service.set_line(clientObject)
+
+    @staticmethod
+    def DeleteLine(lines_no: str = '1 2', model = Model):
+
+        '''
+        Args:
+
+        '''
+
+        # Delete from client model
+        for line in ConvertStrToListOfInt(lines_no):
+            model.clientModel.service.delete_object(ObjectTypes.E_OBJECT_TYPE_LINE.name, line)
 
 
