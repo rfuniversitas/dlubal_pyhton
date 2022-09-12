@@ -14,6 +14,7 @@ from RSECTION.BasicObjects.material import Material
 from RSECTION.BasicObjects.section import Section
 from RSECTION.BasicObjects.point import Point
 from RSECTION.BasicObjects.line import Line
+from RSECTION.BasicObjects.part import Part
 from RSECTION.enums import LineArcAlphaAdjustmentTarget, PointReferenceType
 
 if __name__ == '__main__':
@@ -51,6 +52,7 @@ if __name__ == '__main__':
 
     Point.OnLine(9, 1, PointReferenceType.REFERENCE_TYPE_Y, [False, 0.1])
 
+    # Part(1, '1 2 3 4')
 
     Model.clientModel.service.finish_modification()
 
