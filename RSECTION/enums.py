@@ -6,7 +6,7 @@ class ObjectTypes(Enum):
     Object Types
     '''
 
-    E_OBJECT_TYPE_MATERIAL, E_OBJECT_TYPE_SECTION, E_OBJECT_TYPE_POINT, E_OBJECT_TYPE_LINE = range(4)
+    E_OBJECT_TYPE_MATERIAL, E_OBJECT_TYPE_SECTION, E_OBJECT_TYPE_POINT, E_OBJECT_TYPE_LINE, E_OBJECT_TYPE_PART = range(5)
 
 
 class PointType(Enum):
@@ -39,8 +39,3 @@ class LineArcAlphaAdjustmentTarget(Enum):
     '''
     ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, ALPHA_ADJUSTMENT_TARGET_ARC_CONTROL_POINT, ALPHA_ADJUSTMENT_TARGET_END_OF_ARC = range(3)
 
-class GeometryType(Enum):
-    '''
-    Geometry Type | Enumeration
-    '''
-    GEOMETRY_BOUNDARY_LINES = range(1)

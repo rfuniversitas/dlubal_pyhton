@@ -1,4 +1,4 @@
-from RSECTION.initModel import ConvertToDlString, Model, clearAtributes
+from RSECTION.initModel import  Model, ConvertToDlString, clearAtributes, ConvertStrToListOfInt
 from RSECTION.enums import ObjectTypes
 
 class Part():
@@ -56,3 +56,15 @@ class Part():
 
         # Add Point to client model
         model.clientModel.service.set_part(clientObject)
+
+    @staticmethod
+    def DeletePart(parts_no: str = '1 2', model = Model):
+
+        '''
+        Args:
+        '''
+
+        # Delete from client model
+        for part in ConvertStrToListOfInt(parts_no):
+            model.clientModel.service.delete_object(ObjectTypes.E_OBJECT_TYPE_PART.name, part)
+
