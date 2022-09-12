@@ -12,6 +12,7 @@ from RSECTION.BasicObjects.material import Material
 from RSECTION.BasicObjects.section import Section
 from RSECTION.BasicObjects.point import Point
 from RSECTION.BasicObjects.line import Line
+from RSECTION.BasicObjects.part import Part
 
 if Model.clientModel is None:
     Model()
@@ -115,3 +116,27 @@ def test_line():
     assert line_5.ellipse_second_point == 8
     assert line_6.parabola_alpha == 0.1
     assert line_7.nurbs_control_points_by_components[0][1].row['weight'] == 1.0
+
+def test_part():
+
+    Model.clientModel.service.delete_all()
+    Model.clientModel.service.begin_modification()
+
+    Point(1, 1, 1)
+    Point(2, 1, -1)
+    Point(3, -1, -1)
+    Point(4, -1, 1)
+
+    Line(1, '1 2')
+    Line(2, '2 3')
+    Line(3, '3 4')
+    Line(4, '4 1')
+    Line.Circle(5, [0, 0], 0.5)
+
+    Part(1, '1 2 3 4')
+
+    Model.clientModel.service.finish_modification()
+
+    part = Model.clientModel.service.get_part(1)
+
+    assert part.boundary_lines == "1 2 3 4"
