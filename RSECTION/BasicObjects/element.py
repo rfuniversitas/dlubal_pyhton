@@ -1,5 +1,5 @@
 from RSECTION.initModel import Model, clearAtributes, ConvertToDlString, ConvertStrToListOfInt
-from RSECTION.enums import ElementType, ElementArcAlphaAdjustmentTarget
+from RSECTION.enums import ElementType, ElementArcAlphaAdjustmentTarget, ObjectTypes
 
 class Element():
 
@@ -430,3 +430,15 @@ class Element():
 
         # Add Line to client model
         model.clientModel.service.set_element(clientObject)
+
+    @staticmethod
+    def DeleteElement(elements_no: str = '1 2', model = Model):
+
+        '''
+        Args:
+
+        '''
+
+        # Delete from client model
+        for element in ConvertStrToListOfInt(elements_no):
+            model.clientModel.service.delete_object(ObjectTypes.E_OBJECT_TYPE_ELEMENT.name, element)
