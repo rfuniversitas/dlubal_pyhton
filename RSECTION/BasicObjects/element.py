@@ -346,3 +346,87 @@ class Element():
 
         # Add Line to client model
         model.clientModel.service.set_element(clientObject)
+
+    @staticmethod
+    def NURBS(
+              no: int = 1,
+              control_points: str = None,
+              components: list = None,
+              weights: list = None,
+              order: int = None,
+              thickness: float = 0.0,
+              effective_thickness: list = [False, None],
+              comment: str = '',
+              params: dict = None,
+              model = Model):
+
+        '''
+        Args:
+            control_points (str): String of Start Point and End Point (example: '1 2')
+            components (list of lists): Control Points List
+                component = [[start_point_x, start_point_y],
+                             [control_point_x, control_point_y],
+                             ....,
+                             [end_point_x, end_point]]
+            weights (list): Control Points Weights
+
+        '''
+
+        # Client model | Element
+        clientObject = model.clientModel.factory.create('ns0:element')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Line No.
+        clientObject.no = no
+
+        # Type
+        clientObject.type = ElementType.TYPE_NURBS.name
+
+        # Control points
+        clientObject.definition_points = ConvertToDlString(control_points)
+
+        # Nurbs Order
+        if order > 1 and order <= len(components):
+            clientObject.nurbs_order = order
+        else:
+            print('Error: Please write Nurbs order in range 2 and number of Control Points!')
+
+        #Local Section Reduction Components
+        clientObject.nurbs_control_points_by_components = model.clientModel.factory.create('ns0:array_of_element_nurbs_control_points_by_components')
+
+        for i,j in enumerate(components):
+            nurbs = model.clientModel.factory.create('ns0:element_nurbs_control_points_by_components_row')
+            nurbs.no = i+1
+            nurbs.row.global_coordinate_y = components[i][0]
+            nurbs.row.global_coordinate_z = components[i][1]
+            nurbs.row.weight = weights[i]
+
+            clientObject.nurbs_control_points_by_components.element_nurbs_control_points_by_components.append(nurbs)
+
+        # Element Thickness
+        clientObject.thickness = thickness
+
+        # Effective Thickness
+
+        if effective_thickness[0] == True:
+
+            clientObject.effective_thickness_checked = effective_thickness[0]
+            clientObject.effective_thickness = effective_thickness[1]
+
+        else:
+
+            clientObject.effective_thickness_checked = effective_thickness[0]
+            clientObject.effective_thickness = effective_thickness[1]
+
+        # Comment
+        clientObject.comment = comment
+
+        # Adding optional parameters via dictionary
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+        # Add Line to client model
+        model.clientModel.service.set_element(clientObject)

@@ -267,7 +267,8 @@ class Line():
               weights: list = None,
               order: int = None,
               comment: str = '',
-              params: dict = None, model = Model):
+              params: dict = None,
+              model = Model):
 
         '''
         Args:
