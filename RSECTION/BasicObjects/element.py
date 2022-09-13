@@ -43,7 +43,7 @@ class Element():
         # Add Line to client model
         model.clientModel.service.set_element(clientObject)
 
-    def SingleLine(self,
+    def SingleLine(
                    no: int = 1,
                    points_no: str = '1 2',
                    thickness: float = 0.0,
@@ -73,7 +73,6 @@ class Element():
         clientObject.type = ElementType.TYPE_SINGLELINE.name
 
         # Element Thickness
-
         clientObject.thickness = thickness
 
         # Effective Thickness

@@ -49,7 +49,7 @@ if __name__ == '__main__':
     Opening(1, '5')
 
     Element(1, '5 6', 0.5)
-    Element(2, '6 7', 0.5)
+    Element.SingleLine(2, '6 7', 0.5)
 
 
     Model.clientModel.service.finish_modification()
