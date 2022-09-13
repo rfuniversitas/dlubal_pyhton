@@ -43,7 +43,7 @@ class ElementType(Enum):
     '''
     Element Type | Enumeration
     '''
-    TYPE_SINGLELINE, TYPE_ARC = range(2)
+    TYPE_SINGLELINE, TYPE_ARC, TYPE_CIRCLE = range(3)
 
 class ElementArcAlphaAdjustmentTarget(Enum):
     '''

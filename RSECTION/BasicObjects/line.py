@@ -126,11 +126,12 @@ class Line():
 
     @staticmethod
     def Circle(
-                no: int = 1,
-                center_of_cirle: list = [0.0, 0.0],
-                circle_radius: float = 0.1,
-                comment: str = '',
-                params: dict = None, model = Model):
+               no: int = 1,
+               center_of_cirle: list = [0.0, 0.0],
+               circle_radius: float = 0.1,
+               comment: str = '',
+               params: dict = None,
+               model = Model):
 
         '''
         Args:
@@ -168,12 +169,12 @@ class Line():
 
     @staticmethod
     def Ellipse(
-            no: int = 1,
-            points_no: list = [1, 2],
-            control_point: list = None,
-            comment: str = '',
-            params: dict = None,
-            model = Model):
+                no: int = 1,
+                points_no: list = [1, 2],
+                control_point: list = None,
+                comment: str = '',
+                params: dict = None,
+                model = Model):
 
         '''
         Args:
