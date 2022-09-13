@@ -50,6 +50,8 @@ if __name__ == '__main__':
 
     Element(1, '5 6', 0.5)
     Element.SingleLine(2, '6 7', 0.5)
+    Element.SingleLine(3, '7 8', 0.5)
+    Element.SingleLine(4, '8 5', 0.5, [True, 0.49])
 
 
     Model.clientModel.service.finish_modification()
