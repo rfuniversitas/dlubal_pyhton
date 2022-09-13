@@ -16,6 +16,7 @@ from RSECTION.BasicObjects.point import Point
 from RSECTION.BasicObjects.line import Line
 from RSECTION.BasicObjects.part import Part
 from RSECTION.BasicObjects.opening import Opening
+from RSECTION.BasicObjects.element import Element
 from RSECTION.enums import LineArcAlphaAdjustmentTarget, PointReferenceType
 
 if __name__ == '__main__':
@@ -32,6 +33,10 @@ if __name__ == '__main__':
     Point(2, 1, -1)
     Point(3, -1, -1)
     Point(4, -1, 1)
+    Point(5,0.75,0.75)
+    Point(6,0.75,-0.75)
+    Point(7,-0.75,-0.75)
+    Point(8,-0.75,0.75)
 
     Line(1, '1 2')
     Line(2, '2 3')
@@ -42,6 +47,10 @@ if __name__ == '__main__':
     Part(1, '1 2 3 4')
 
     Opening(1, '5')
+
+    Element(1, '5 6', 0.5)
+    Element(2, '6 7', 0.5)
+
 
     Model.clientModel.service.finish_modification()
 

@@ -39,3 +39,8 @@ class LineArcAlphaAdjustmentTarget(Enum):
     '''
     ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, ALPHA_ADJUSTMENT_TARGET_ARC_CONTROL_POINT, ALPHA_ADJUSTMENT_TARGET_END_OF_ARC = range(3)
 
+class ElementType(Enum):
+    '''
+    Element Type | Enumeration
+    '''
+    TYPE_SINGLELINE = range(1)
