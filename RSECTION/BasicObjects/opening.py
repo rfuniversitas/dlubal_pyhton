@@ -2,6 +2,7 @@ from RSECTION.initModel import Model, clearAtributes, ConvertToDlString, Convert
 from RSECTION.enums import ObjectTypes
 
 class Opening():
+
     def __init__(self,
                  no: int = 1,
                  boundary_lines: str = '1 2 3 4',
