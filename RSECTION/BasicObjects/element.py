@@ -238,7 +238,7 @@ class Element():
 
         '''
 
-        # Client model | Line
+        # Client model | Element
         clientObject = model.clientModel.factory.create('ns0:element')
 
         # Clears object atributes | Sets all atributes to None
@@ -282,5 +282,67 @@ class Element():
         # Add Line to client model
         model.clientModel.service.set_element(clientObject)
 
+    @staticmethod
+    def Parabola(
+                 no: int = 1,
+                 points_no: list = [1, 2],
+                 control_point: list = None,
+                 alpha: float = 0.0,
+                 thickness: float = 0.0,
+                 effective_thickness: list = [False, None],
+                 comment: str = '',
+                 params: dict = None,
+                 model = Model):
 
+        '''
+        Args:
+            control_point (list): Control Point coordinate for Parabola in [Y, Z]
+            alpha (float): Alpha Angle (in Radians)
 
+        '''
+
+        # Client model | Element
+        clientObject = model.clientModel.factory.create('ns0:element')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Line No.
+        clientObject.no = no
+
+        # Type
+        clientObject.type = ElementType.TYPE_PARABOLA.name
+
+        # Points No. and Parabola Control Point Coordinates
+        clientObject.parabola_first_point = points_no[0]
+        clientObject.parabola_second_point = points_no[1]
+        clientObject.parabola_control_point_y = control_point[0]
+        clientObject.parabola_control_point_z = control_point[1]
+
+        clientObject.parabola_alpha = alpha
+
+        # Element Thickness
+        clientObject.thickness = thickness
+
+        # Effective Thickness
+
+        if effective_thickness[0] == True:
+
+            clientObject.effective_thickness_checked = effective_thickness[0]
+            clientObject.effective_thickness = effective_thickness[1]
+
+        else:
+
+            clientObject.effective_thickness_checked = effective_thickness[0]
+            clientObject.effective_thickness = effective_thickness[1]
+
+        # Comment
+        clientObject.comment = comment
+
+        # Adding optional parameters via dictionary
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+        # Add Line to client model
+        model.clientModel.service.set_element(clientObject)

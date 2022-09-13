@@ -54,7 +54,8 @@ if __name__ == '__main__':
     # Element.SingleLine(2, '6 7', 0.5, [True, 0.49])
     # Element.Arc(3, [9, 10], [0.5303,0.5303], ElementArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, 0.5)
     # Element.Circle(4, [0,0], 0.75, 0.5)
-    Element.Ellipse(5, [8, 6], [0.45, 0.45], 0.25)
+    # Element.Ellipse(5, [8, 6], [0.45, 0.45], 0.25)
+    Element.Parabola(6, [8, 6], [-0.6, -0.6], 0, 0.25)
 
 
     Model.clientModel.service.finish_modification()

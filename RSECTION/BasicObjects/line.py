@@ -218,7 +218,8 @@ class Line():
                  control_point: list = None,
                  alpha: float = 0.0,
                  comment: str = '',
-                 params: dict = None, model = Model):
+                 params: dict = None,
+                 model = Model):
 
         '''
         Args:
