@@ -1,4 +1,4 @@
-from RSECTION.enums import StressPointType, PointCoordinateSystemType, PointReferenceType
+from RSECTION.enums import StressPointType, PointCoordinateSystemType, PointReferenceType, ElementSide
 from RSECTION.initModel import Model, clearAtributes, ConvertStrToListOfInt
 
 class StressPoint():
@@ -147,7 +147,8 @@ class StressPoint():
     @staticmethod
     def OnElement(
                  no: int = 1,
-                 line_no: int = 1,
+                 element_no: int = 1,
+                 element_side = ElementSide.ELEMENT_SIDE_MIDDLE,
                  point_reference = PointReferenceType.REFERENCE_TYPE_L,
                  parameters = [True, 0.5],
                  comment: str = '',
@@ -156,5 +157,44 @@ class StressPoint():
 
         '''
         Args:
-
         '''
+
+        # Client model | Stress Point
+        clientObject = model.clientModel.factory.create('ns0:stress_point')
+
+        # Clears object atributes | Sets all atributes to None
+        clearAtributes(clientObject)
+
+        # Stress Point No.
+        clientObject.no = no
+
+        # Stress Point Type
+        clientObject.definition_type = StressPointType.TYPE_ON_ELEMENT.name
+
+        # Line No.
+        clientObject.on_element_reference_element = element_no
+        clientObject.on_element_element_side = element_side.name
+
+        # Point Reference and Distance between Point and Start Point
+        clientObject.reference_type = point_reference.name
+
+        if parameters[0]:  #if parameters[0]==True
+
+            if parameters[1] <= 0 or parameters[1] >= 1:
+                raise Exception ('Warning: Please enter correct percentage value between 0.0 and 1.0')
+
+            else:
+                clientObject.distance_from_start_relative = parameters[1]
+
+        else:
+            clientObject.distance_from_start_absolute = parameters[1]
+
+        # Comment
+        clientObject.comment = comment
+
+        if params:
+            for key in params:
+                clientObject[key] = params[key]
+
+        # Add Stress Point to client model
+        model.clientModel.service.set_stress_point(clientObject)

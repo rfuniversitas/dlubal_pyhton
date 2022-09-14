@@ -56,4 +56,9 @@ class StressPointType(Enum):
     '''
     Element Type | Enumeration
     '''
-    TYPE_STANDARD, TYPE_ON_LINE = range(2)
+    TYPE_STANDARD, TYPE_ON_LINE, TYPE_ON_ELEMENT = range(3)
+
+class ElementSide(Enum):
+
+    ELEMENT_SIDE_MIDDLE, ELEMENT_SIDE_LEFT, ELEMENT_SIDE_RIGHT = range(3)
+

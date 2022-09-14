@@ -18,7 +18,7 @@ from RSECTION.BasicObjects.part import Part
 from RSECTION.BasicObjects.opening import Opening
 from RSECTION.BasicObjects.element import Element
 from RSECTION.BasicObjects.stresspoint import StressPoint
-from RSECTION.enums import ElementArcAlphaAdjustmentTarget, LineArcAlphaAdjustmentTarget, PointReferenceType
+from RSECTION.enums import ElementArcAlphaAdjustmentTarget, ElementSide, LineArcAlphaAdjustmentTarget, PointReferenceType
 
 if __name__ == '__main__':
 
@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
     StressPoint(1, -0.3, 0.75)
     StressPoint.Standard(2, [0.6, 0], 1)
-    StressPoint.OnLine(3, 4, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
+    StressPoint.OnElement(3, 1, ElementSide.ELEMENT_SIDE_MIDDLE, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
 
 
     Model.clientModel.service.finish_modification()
