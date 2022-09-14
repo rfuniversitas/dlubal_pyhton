@@ -54,7 +54,7 @@ class Part():
             for key in params:
                 clientObject[key] = params[key]
 
-        # Add Point to client model
+        # Add Part to client model
         model.clientModel.service.set_part(clientObject)
 
     @staticmethod

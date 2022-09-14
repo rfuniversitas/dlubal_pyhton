@@ -1,5 +1,4 @@
-from RSECTION.enums import ObjectTypes
-from RSECTION.enums import PointType, PointCoordinateSystemType, PointReferenceType
+from RSECTION.enums import PointType, PointCoordinateSystemType, PointReferenceType, ObjectTypes
 from RSECTION.initModel import Model, clearAtributes, ConvertStrToListOfInt
 
 class Point():
@@ -285,7 +284,7 @@ class Point():
                  no: int = 1,
                  line_no: int = 1,
                  point_reference = PointReferenceType.REFERENCE_TYPE_L,
-                 parameters = [True, 50],
+                 parameters = [True, 0.5],
                  comment: str = '',
                  params: dict = None,
                  model = Model):

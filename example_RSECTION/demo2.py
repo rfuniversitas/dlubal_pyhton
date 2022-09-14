@@ -17,11 +17,12 @@ from RSECTION.BasicObjects.line import Line
 from RSECTION.BasicObjects.part import Part
 from RSECTION.BasicObjects.opening import Opening
 from RSECTION.BasicObjects.element import Element
+from RSECTION.BasicObjects.stresspoint import StressPoint
 from RSECTION.enums import ElementArcAlphaAdjustmentTarget, LineArcAlphaAdjustmentTarget, PointReferenceType
 
 if __name__ == '__main__':
 
-    Model(True, "Demo2") # crete new model called Demo
+    Model(True, "demo2") # crete new model called Demo
 
     Model.clientModel.service.begin_modification()
 
@@ -50,14 +51,18 @@ if __name__ == '__main__':
 
     Opening(1, '5')
 
-    # Element(1, '7 8', 0.5)
-    # Element.SingleLine(2, '6 7', 0.5, [True, 0.49])
-    # Element.Arc(3, [9, 10], [0.5303,0.5303], ElementArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, 0.5)
-    Element.Circle(4, [0,0], 0.75, 0.5)
+    Element(1, '7 8', 0.5)
+    Element.SingleLine(2, '6 7', 0.5, [True, 0.49])
+    Element.Arc(3, [9, 10], [0.5303,0.5303], ElementArcAlphaAdjustmentTarget.ALPHA_ADJUSTMENT_TARGET_BEGINNING_OF_ARC, 0.5)
+    # Element.Circle(4, [0,0], 0.75, 0.5)
     # Element.Ellipse(5, [8, 6], [0.45, 0.45], 0.25)
     # Element.Parabola(6, [8, 6], [-0.6, -0.6], 0, 0.25)
     # Element.NURBS(7, '6 8', [[0.75,-0.75], [0.75, 0], [0, 0.75], [-0.75,0.75]], [1, 1, 1, 1], 3, 0.25)
     # Element.DeleteElement('7')
+
+    StressPoint(1, -0.3, 0.75)
+    StressPoint.Standard(2, [0.6, 0], 1)
+    StressPoint.OnLine(3)
 
 
     Model.clientModel.service.finish_modification()
