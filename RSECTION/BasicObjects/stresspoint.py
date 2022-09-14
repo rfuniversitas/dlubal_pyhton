@@ -143,3 +143,18 @@ class StressPoint():
 
         # Add Stress Point to client model
         model.clientModel.service.set_stress_point(clientObject)
+
+    @staticmethod
+    def OnElement(
+                 no: int = 1,
+                 line_no: int = 1,
+                 point_reference = PointReferenceType.REFERENCE_TYPE_L,
+                 parameters = [True, 0.5],
+                 comment: str = '',
+                 params: dict = None,
+                 model = Model):
+
+        '''
+        Args:
+
+        '''

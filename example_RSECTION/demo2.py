@@ -62,7 +62,7 @@ if __name__ == '__main__':
 
     StressPoint(1, -0.3, 0.75)
     StressPoint.Standard(2, [0.6, 0], 1)
-    StressPoint.OnLine(3)
+    StressPoint.OnLine(3, 4, PointReferenceType.REFERENCE_TYPE_L, [True, 0.4])
 
 
     Model.clientModel.service.finish_modification()
